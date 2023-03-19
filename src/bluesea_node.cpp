@@ -17,7 +17,7 @@
 #include "reader.h"
 #include <cmath>
 
-#define ROS2Verision "1.4.6"
+#define ROS2Veision "1.4.6"
 
 HReader g_reader = NULL;
 std::string g_type = "uart";
@@ -803,10 +803,10 @@ int main(int argc, char *argv[])
 	auto node = rclcpp::Node::make_shared("bluesea_node");
 
 	signal(SIGINT, closeSignal);
-	READ_PARAM(std::string, "type", type, "uart");
+	READ_PARAM(std::string, "type", type, "udp");
 	g_type = type;
 
-	READ_PARAM(std::string, "platform", platform, "LDS-50C-S");
+	READ_PARAM(std::string, "platform", platform, "LDS-50C-E");
 
 	// for serial port comm
 	READ_PARAM(std::string, "port", port, "/dev/ttyUSB0");
@@ -823,18 +823,18 @@ int main(int argc, char *argv[])
 	std::string laser_topics[MAX_LIDARS];
 	std::string cloud_topics[MAX_LIDARS];
 	// for network comm
-	lidar_ips[0] = "192.168.158.91";
+	lidar_ips[0] = "192.168.2.11";
 	node->declare_parameter<std::string>("lidar_ip", lidar_ips[0]);
 	node->get_parameter("lidar_ip", lidar_ips[0]);
 
-	lidar_ports[0] = 6543;
+	lidar_ports[0] = 502;
 	node->declare_parameter<int>("lidar_port", lidar_ports[0]);
 	node->get_parameter("lidar_port", lidar_ports[0]);
 
-	// READ_PARAM(std::string, "lidar_ip", lidar_ips[0], "192.168.158.91");
+	// READ_PARAM(std::string, "lidar_ip", lidar_ips[0], "192.168.2.11");
 	READ_PARAM(std::string, "group_ip", group_ip, "224.1.1.91");
 	// READ_PARAM(int, "lidar_port", lidar_ports[0], 5000);
-	READ_PARAM(int, "local_port", local_port, 50122);
+	READ_PARAM(int, "local_port", local_port, 6668);
 	// topic
 	laser_topics[0] = "scan";
 	node->declare_parameter<std::string>("topic", laser_topics[0]);

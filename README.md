@@ -13,17 +13,8 @@ How to run Lanhai ros node (Serial Port Version)
 2) or Run : sudo chmod 666 /dev/ttyUSB0 # make usb serial port readable
 
 
-## if your lidar model is LDS-50C-2 :
-* ros2 launch bluesea2 LDS-50C-2.py 
-
-## if your lidar model is LDS-50C-C30E :
-* ros2 launch bluesea2 LDS-50C-C30E.py 
-    
-## if your lidar model is LDS-50C-C20E :
-* ros2 launch bluesea2 LDS-50C-C20E.py 
-
-## if your lidar model is LSS-40D-C20E :
-* ros2 launch bluesea2 LDS-40D-C20E.py 
+## launch
+* ros2 launch bluesea2 main.launch.py
 
     
 3) optional : ros2 topic hz /scan
@@ -42,6 +33,6 @@ How to control Lanhai ros node  start  and stop
 	           
 * server:  
     
-		ros2 launch  bluesea2  xxxx.launch 
+		ros2 launch  bluesea2  xxxx.launch.py
 
 
