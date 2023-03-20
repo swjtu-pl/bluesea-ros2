@@ -20,7 +20,7 @@ def generate_launch_description():
 
     params_declare = DeclareLaunchArgument('params_file',
                                            default_value=os.path.join(
-                                               share_dir, 'params', 'LDS-50C-C30E.yaml'),
+                                               share_dir, 'params', 'config.yaml'),
                                            description='FPath to the ROS2 parameters file to use.')
 
     #对多版本的兼容性处理 首字母e以及之前为18.04或更早,之后为20.04或更晚
