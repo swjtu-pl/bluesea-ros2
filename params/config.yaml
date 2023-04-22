@@ -3,7 +3,7 @@ bluesea_node:
     type: "udp"
     platform: "LDS-50C-E"
     port: "/dev/ttyUSB0"
-    frame_id: "map"
+    frame_id: "lidar_link"
     rate_list: "500000, 768000, 921600"
     baud_rate: 500000
     raw_bytes: 3
@@ -26,7 +26,7 @@ bluesea_node:
     inverted: false
     reversed: false
     topic: "scan"
-    lidar_ip: "192.168.2.11"
+    lidar_ip: "192.168.101.66"
     lidar_port: 502
     local_port: 6668
     group_ip: "224.1.2.3"
